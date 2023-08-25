@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" matriz-content="IE=edge" />
+    <meta name="viewport" matriz-content="width=device-width, initial-scale=1.0" />
+    <title>Teste seletor com abas</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .matriz-container {
+            width: 765px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            border: 1px solid;
+        }
+        
+        .matriz-container-content {
+            display: block;
+            width: 100%;
+        }
+        
+        .title-matriz-container {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .title-matriz-container h2 {
+            position: relative;
+            padding-left: 30px;
+            font-size: 30px;
+        }
+        
+        .macha-title {
+            position: absolute;
+            background-color: #e5e544;
+            width: 332px;
+            height: 21px;
+            top: 14px;
+            left: 24px;
+            z-index: -1;
+        }
+        
+        .matriz-content {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .matriz-content-table {
+            width: 65%;
+        }
+        
+        .matriz-content-table-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: #1d1d61f3;
+        }
+        
+        #periodo-1 {
+            background-color: #b5b5e0;
+        }
+        
+        .matriz-content-table-title p {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            width: 25%;
+            margin: 0;
+            padding: 5px 0px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .matriz-content-table-title p:active {
+            background-color: #b5b5e0;
+        }
+        
+        #box-periodo-1 {
+            display: block;
+            width: 100%;
+            background-color: #b5b5e0;
+            color: #1d1d61f3;
+        }
+        
+        #box-periodo-2,
+        #box-periodo-3,
+        #box-modulo {
+            display: none;
+            width: 100%;
+            background-color: #b5b5e0;
+            color: #1d1d61f3;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        table th {
+            width: 25%;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        table td {
+            width: 25%;
+            text-align: center;
+            font-size: 15px;
+            padding-bottom: 8px;
+        }
+        
+        .matriz-content {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .matriz-content-info {
+            display: block;
+            width: 35%;
+            padding: 0 10px;
+        }
+        
+        .matriz-content-info p {
+            margin: 4.5px;
+            font-size: 16px;
+        }
+        
+        .matriz-content-info hr {
+            margin: 44px 0 0 0;
+            width: 95%;
+            height: 15px;
+            background-color: #b5b5e0;
+            border: none;
+        }
+        
+        @media (max-width: 768px) {
+            .matriz-content {
+                display: block;
+            }
+            .title-matriz-container {
+                display: flex;
+                justify-content: center;
+            }
+            .matriz-content-table {
+                width: 90%;
+                margin: auto;
+            }
+            .matriz-content-info {
+                width: 300px;
+                margin: auto;
+                margin-top: 15px;
+            }
+            .matriz-content-info p {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .title-matriz-container h2 {
+                font-size: 45px;
+            }
+            .macha-title {
+                width: 494px;
+                height: 29px;
+                top: 21px;
+                left: 24px;
+            }
+            .matriz-content-table {
+                width: 97%;
+                margin: auto;
+            }
+            .matriz-content-table-title p {
+                font-size: 16px;
+            }
+            table th {
+                font-size: 19px;
+            }
+            table td {
+                font-size: 18px;
+            }
+            .matriz-content-info {
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+            }
+            .matriz-content-info p {
+                font-size: 18px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="matriz-container">
+        <div class="matriz-container-content">
+            <div class="title-matriz-container">
+                <h2>
+                    MATRIZ CURRICULAR
+                    <div class="macha-title"></div>
+                </h2>
+            </div>
+            <div class="matriz-content">
+                <div class="matriz-content-table">
+                    <div class="matriz-content-table-title">
+                        <p id="periodo-1" onclick="abrirAbaUm()">1ª. Período</p>
+                        <p id="periodo-2" onclick="abrirAbaDois()">2ª. Período</p>
+                        <p id="periodo-3" onclick="abrirAbaTres()">3ª. Período</p>
+                        <p id="modulo" onclick="abrirAbaModulo()">Módulo</p>
+                    </div>
+                    <div id="box-periodo-1">
+                        <tbody>
+                            <table>
+                                <tr>
+                                    <th style="text-align: left; padding-left: 10px">
+                                        DISCIPLINAS → PERIDO 1
+                                    </th>
+                                    <th>CH CR</th>
+                                    <th>PRÉ-REQUISITOS</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Inteligência de Mercado
+                                    </td>
+                                    <td>72 4</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Gestão de Pessoas
+                                    </td>
+                                    <td>36 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Gestão Organizacional
+                                    </td>
+                                    <td>36 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Empreendedorismo
+                                    </td>
+                                    <td>72 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                            </table>
+                        </tbody>
+                    </div>
+                    <div id="box-periodo-2">
+                        <tbody>
+                            <table>
+                                <tr>
+                                    <th style="text-align: left; padding-left: 10px">
+                                        DISCIPLINAS → PERIDO 2
+                                    </th>
+                                    <th>CH CR</th>
+                                    <th>PRÉ-REQUISITOS</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Inteligência de Mercado
+                                    </td>
+                                    <td>72 4</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Gestão de Pessoas
+                                    </td>
+                                    <td>36 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Gestão Organizacional
+                                    </td>
+                                    <td>36 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Empreendedorismo
+                                    </td>
+                                    <td>72 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                            </table>
+                        </tbody>
+                    </div>
+                    <div id="box-periodo-3">
+                        <tbody>
+                            <table>
+                                <tr>
+                                    <th style="text-align: left; padding-left: 10px">
+                                        DISCIPLINAS → PERIDO 3
+                                    </th>
+                                    <th>CH CR</th>
+                                    <th>PRÉ-REQUISITOS</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Inteligência de Mercado
+                                    </td>
+                                    <td>72 4</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Gestão de Pessoas
+                                    </td>
+                                    <td>36 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Gestão Organizacional
+                                    </td>
+                                    <td>36 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Empreendedorismo
+                                    </td>
+                                    <td>72 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                            </table>
+                        </tbody>
+                    </div>
+                    <div id="box-modulo">
+                        <tbody>
+                            <table>
+                                <tr>
+                                    <th style="text-align: left; padding-left: 10px">
+                                        DISCIPLINAS → MÓDULO
+                                    </th>
+                                    <th>CH CR</th>
+                                    <th>PRÉ-REQUISITOS</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Inteligência de Mercado
+                                    </td>
+                                    <td>72 4</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Gestão de Pessoas
+                                    </td>
+                                    <td>36 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Gestão Organizacional
+                                    </td>
+                                    <td>36 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 10px">
+                                        Empreendedorismo
+                                    </td>
+                                    <td>72 2</td>
+                                    <td>Sem Pré-riquisitos</td>
+                                </tr>
+                            </table>
+                        </tbody>
+                    </div>
+                </div>
+                <div class="matriz-content-info">
+                    <p class="matriz-content-info-title">Coordenador:</p>
+                    <p><b>Nome do coordenador do curso</b></p>
+                    <p>telefone:</p>
+                    <p><b>81 9 9999.9999</b></p>
+                    <p>Email:</p>
+                    <p><b>coordenador@alfa.edu.br</b></p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //Variáveis globais
+        //Titulo abas
+        let titleUm = document.getElementById('periodo-1');
+        let titleDois = document.getElementById('periodo-2');
+        let titleTres = document.getElementById('periodo-3');
+        let titleModulo = document.getElementById('modulo');
+        //Abas
+        let periodoUm = document.getElementById('box-periodo-1');
+        let peridoDois = document.getElementById('box-periodo-2');
+        let peridoTres = document.getElementById('box-periodo-3');
+        let modulo = document.getElementById('box-modulo');
+
+        //Período primeiro
+        const abrirAbaUm = () => {
+            // console.log('Clicou!');
+            if ((periodoUm.style.display = 'none')) {
+                periodoUm.style.display = 'block';
+                titleUm.style.backgroundColor = '#b5b5e0';
+                titleDois.style.backgroundColor = '#1d1d61f3';
+                titleTres.style.backgroundColor = '#1d1d61f3';
+                titleModulo.style.backgroundColor = '#1d1d61f3';
+                peridoDois.style.display = 'none';
+                peridoTres.style.display = 'none';
+                modulo.style.display = 'none';
+                // console.log('Clicou 2!');
+            }
+        };
+        //Período segundo
+        const abrirAbaDois = () => {
+            if ((peridoDois.style.display = 'none')) {
+                peridoDois.style.display = 'block';
+                titleUm.style.backgroundColor = '#1d1d61f3';
+                titleDois.style.backgroundColor = '#b5b5e0';
+                titleTres.style.backgroundColor = '#1d1d61f3';
+                titleModulo.style.backgroundColor = '#1d1d61f3';
+                periodoUm.style.display = 'none';
+                peridoTres.style.display = 'none';
+                modulo.style.display = 'none';
+            }
+        };
+        //Período três
+        const abrirAbaTres = () => {
+            if ((peridoTres.style.display = 'none')) {
+                peridoTres.style.display = 'block';
+                titleUm.style.backgroundColor = '#1d1d61f3';
+                titleDois.style.backgroundColor = '#1d1d61f3';
+                titleTres.style.backgroundColor = '#b5b5e0';
+                titleModulo.style.backgroundColor = '#1d1d61f3';
+                periodoUm.style.display = 'none';
+                peridoDois.style.display = 'none';
+                modulo.style.display = 'none';
+            }
+        };
+
+        //Módulo
+        const abrirAbaModulo = () => {
+            if ((modulo.style.display = 'none')) {
+                modulo.style.display = 'block';
+                titleUm.style.backgroundColor = '#1d1d61f3';
+                titleDois.style.backgroundColor = '#1d1d61f3';
+                titleTres.style.backgroundColor = '#1d1d61f3';
+                titleModulo.style.backgroundColor = '#b5b5e0';
+                periodoUm.style.display = 'none';
+                peridoDois.style.display = 'none';
+                peridoTres.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+1
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" matriz-content="IE=edge" />
+    <meta name="viewport" matriz-content="width=device-width, initial-scale=1.0" />
+    <title>Contator de dias</title>
+
+    <style>
+        #contadorData {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            margin: auto;
+            border: 1px solid;
+        }
+        
+        #demo {
+            border: 1px solid;
+            margin: 0;
+        }
+        
+        #boxTempo {
+            width: 100%;
+            border: 1px solid green;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+        }
+        
+        #boxTempo p {
+            width: 20%;
+            border: 1px solid blue;
+            text-align: center;
+            margin: 0;
+        }
+        /*Novo Contados*/
+        
+        #novoContador {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 20px;
+        }
+        
+        .marcadores {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            background-color: rgb(158, 54, 98);
+            width: 100px;
+        }
+        
+        .nomeData {
+            color: #fff;
+            margin: 0;
+            font-size: 14px;
+            font-family: Montserrat, sans-serif;
+        }
+        
+        .numerosConador {
+            font-size: 20px;
+            color: #f8c304;
+            margin: 0;
+            font-size: 50px;
+            font-family: Montserrat, sans-serif;
+        }
+        /*Fim novo contador*/
+    </style>
+</head>
+
+<body>
+    <!-- <h1>Calcular dias</h1>
+
+    <form name="form_main">
+        <label for="date_ini">Date Inicial: </label>
+        <input name="date_ini" id="date_ini" type="date" /> <br />
+        <label for="date_end">Date Final: </label>
+        <input name="date_end" id="date_end" type="date" /> <br />
+        <label for="days">Dias passados: </label>
+        <span id="days"></span> <br />
+        <button type="button" onclick="countDays()">Contar</button>
+    </form> -->
+    <!-- Separar contador -->
+    <div id="separarTipoContador" style="width: 100%; height: 100px"></div>
+    <div id="contadorData">
+        <h1>Contagem recressiva!</h1>
+        <br />
+        <div id="boxContador">
+            <p id="demo" style="
+            color: #f8c304;
+            font-family: Arial;
+            font-size: 75px;
+            font-weight: 600;
+          "></p>
+            <div id="boxTempo">
+                <p>DIAS</p>
+                <p>HORAS</p>
+                <p>MINUTOS</p>
+                <p>SEGUNDOS</p>
+            </div>
+        </div>
+        <!-- Novo contador -->
+        <div id="novoContador">
+            <div class="marcadores">
+                <p id="diasEmNumeros" class="numerosConador"></p>
+                <p class="nomeData">DIAS</p>
+            </div>
+            <div class="marcadores">
+                <p id="horasEmNumeros" class="numerosConador"></p>
+                <p class="nomeData">HORAS</p>
+            </div>
+            <div class="marcadores">
+                <p id="minutosEmNumeros" class="numerosConador"></p>
+                <p class="nomeData">MINUTOS</p>
+            </div>
+            <div class="marcadores">
+                <p id="segundosEmNumeros" class="numerosConador"></p>
+                <p class="nomeData">SEGUNDOS</p>
+            </div>
+        </div>
+        <!-- Fim novo contador -->
+    </div>
+    <script>
+        //Pegar dia atual e somar mais um
+        var dataAtual = new Date();
+        var dia = String(dataAtual.getDate() + 1).padStart(2, '0');
+        var mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+        var ano = dataAtual.getFullYear();
+        let diaAtualMaisUm = ano + '-' + mes + '-' + dia;
+        console.log(diaAtualMaisUm);
+        //Fim
+        // const second = 1000;
+        // const minute = second * 60;
+        // const hour = minute * 60;
+        // const day = hour * 24;
+
+        // function countDays() {
+        //     let date_ini = new Date(document.form_main.date_ini.value);
+        //     let date_end = new Date(document.form_main.date_end.value);
+
+        //     let diff = date_end.getTime() - date_ini.getTime();
+
+        //     document.getElementById('days').innerText = Math.floor(diff / day);
+        // }
+
+        //Contagem regressiva
+        var deadline = new Date(diaAtualMaisUm).getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var t = deadline - now;
+            var days = String(Math.floor(t / (1000 * 60 * 60 * 24))).padStart(
+                2,
+                '0'
+            );
+            var hours = String(
+                Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+            ).padStart(2, '0');
+            var minutes = String(
+                Math.floor((t % (1000 * 60 * 60)) / (1000 * 60))
+            ).padStart(2, '0');
+            var seconds = String(Math.floor((t % (1000 * 60)) / 1000)).padStart(
+                2,
+                '0'
+            );
+            // document.getElementById('demo').innerHTML =
+            //     days + ' ' + hours + ' ' + minutes + ' ' + seconds + ' ';
+            document.getElementById('diasEmNumeros').innerHTML = days;
+            document.getElementById('horasEmNumeros').innerHTML = hours;
+            document.getElementById('minutosEmNumeros').innerHTML = minutes;
+            document.getElementById('segundosEmNumeros').innerHTML = seconds;
+            if (t < 0) {
+                clearInterval(x);
+                document.getElementById('demo').innerHTML = 'FINALIZADO!';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

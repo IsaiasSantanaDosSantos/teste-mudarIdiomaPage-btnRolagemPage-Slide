@@ -1,0 +1,150 @@
+/* LOGIN GOLPAG */
+
+.matriz-container-login {
+    background-image: url('/teste-mudar-idioma/img/imagem-home-desktop.jpg');
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-matriz-content: start;
+    align-items: center;
+}
+
+.conteudo-login {
+    display: flex;
+    justify-matriz-content: start;
+    align-items: center;
+    height: 70vh;
+    padding: 0px 80px;
+}
+
+.form-login {
+    display: block;
+}
+
+.campos-login {
+    width: 500px;
+}
+
+.campos-login h2 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 24px;
+}
+
+.campos-login input {
+    border: none;
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-bottom: 27px;
+    width: 344px;
+    height: 33px;
+}
+
+.btn-entrar-voltar {
+    display: flex;
+    justify-matriz-content: start;
+    align-items: center;
+}
+
+.btn-entrar-voltar button {
+    background-color: #00ccff;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    padding: 4px 12px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100px;
+    height: 32px;
+    border-radius: 19px;
+    margin-left: 10px;
+    margin-right: 40px;
+}
+
+.btn-entrar-voltar a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.btn-entrar-voltar a:hover {
+    color: #00ccff;
+}
+
+.btn-entrar-voltar a:active {
+    color: #0081d2;
+}
+
+.campos-login img {
+    width: 235px;
+    margin-left: 15px;
+    margin-top: 52px;
+}
+
+@media (min-width: 1401px) {
+    .matriz-container-login {
+        background-image: url('/teste-mudar-idioma/img/imagem-home-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 1400px) {
+    .matriz-container-login {
+        background-image: url('/teste-mudar-idioma/img/imagem-home-1400.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 1200px) {
+    .matriz-container-login {
+        background-image: url('/teste-mudar-idioma/img/imagem-home-1200.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 992px) {
+    .matriz-container-login {
+        background-image: url('/teste-mudar-idioma/img/imagem-home-992.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .matriz-container-login {
+        background-image: url('/teste-mudar-idioma/img/imagem-home-768.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .conteudo-login {
+        padding: 0px;
+        width: 100%;
+    }
+    .form-login {
+        width: 95%;
+    }
+}
+
+@media (max-width: 576px) {
+    .matriz-container-login {
+        background-image: url(/img/imagem-home-576.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+    .campos-login {
+        width: 100%;
+    }
+    .campos-login input {
+        width: 80%;
+    }
+}

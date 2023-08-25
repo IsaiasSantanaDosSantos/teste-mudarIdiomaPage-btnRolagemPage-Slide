@@ -1,0 +1,55 @@
+/* SLIDE TESTE */
+
+.matriz-container-carousel-galeria {
+    width: 100%;
+}
+
+#slider-galeria {
+    margin-top: 8em;
+    margin-bottom: 1em;
+}
+
+#slider-galeria .conteudo-carrossel {
+    bottom: 3em;
+    display: flex;
+    justify-matriz-content: center;
+    align-items: center;
+}
+
+#slider-galeria .conteudo-carrossel img {
+    width: 143%;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+#slider-galeria .btn {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 1em;
+    color: #ffffff;
+    background-color: aqua;
+    border: none;
+}
+
+.indicadores [data-bs-target] {
+    background-color: #222;
+    opacity: 0.8;
+    width: 15px;
+    height: 3px;
+    background-color: aqua;
+}
+
+.indicadores .active {
+    background-color: red;
+}
+
+.item-carrossel {
+    height: 363px;
+    margin-top: 0px;
+    margin-bottom: -69px;
+    background-color: #00ccfe;
+    /*REMOVE!*/
+    border: 1px solid blue;
+}

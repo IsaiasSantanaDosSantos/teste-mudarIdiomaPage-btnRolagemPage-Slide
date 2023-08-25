@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" matriz-content="IE=edge" />
+    <meta name="viewport" matriz-content="width=device-width, initial-scale=1.0" />
+    <title>Faixa horizontal</title>
+
+    <style>
+        #sessaoLead {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(22, 13, 6, 0.4);
+        }
+        
+        #containerLead {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 500px;
+            background-color: #fff;
+            margin: auto;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        #closedLead {
+            position: absolute;
+            top: -30px;
+            right: 15px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+        
+        #closedLead:hover {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        #closedLead:active {
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="containerTeste">
+        <div class="containerBtn" id="imovs4">
+            <a href="#">Chique aqui!</a>
+        </div>
+        <br />
+        <br /><br /><br />
+        <div id="i70j">
+            <a href="#">Ou aqui!!</a>
+        </div>
+    </div>
+    <div id="sessaoLead">
+        <div id="containerLead">
+            <div id="closedLead">X</div>
+            <div id="conteudoLead">|coletalead||redirect-idProduto-364748|</div>
+        </div>
+    </div>
+    <script>
+        //Lead Window
+        let leadWindow = document.getElementById('sessaoLead');
+        document.getElementById('closedLead').addEventListener('click', () => {
+            leadWindow.style.display = 'none';
+        });
+        document.getElementById('imovs4').addEventListener('click', () => {
+            leadWindow.style.display = 'block';
+        });
+        document.getElementById('i70j').addEventListener('click', () => {
+            leadWindow.style.display = 'block';
+        });
+        //Fim Lead Window
+    </script>
+</body>
+
+</html>

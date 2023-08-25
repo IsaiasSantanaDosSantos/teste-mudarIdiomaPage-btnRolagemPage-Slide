@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" matriz-content="IE=edge" />
+    <meta name="viewport" matriz-content="width=device-width, initial-scale=1.0" />
+    <title>Teste slide</title>
+    <!--<script src="vendor/jquery/jquery.min.js "></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+    <!-- Login DRM -->
+    <script type="text/javascript " src="https://euestudo.com.vc/sys/js/loginNew.js"></script>
+    <script src="https://euestudo.com.vc/sys/metro/js/jquery/jquery.min.js "></script>
+    <script src="https://euestudo.com.vc/sys/metro/js/jquery/jquery-ui-1.10.4.custom.min.js "></script>
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <!-- CSS Local  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Login DRM -->
+    <link rel="stylesheet" href="https://euestudo.com.vc/sys/js/loginNew.css" />
+    <style>
+        .matriz-container-fluid {
+            padding: 0;
+        }
+        
+        .navbar-mobile-matriz-content {
+            width: 100%;
+            display: block;
+            background-color: aqua;
+            margin-left: 0;
+        }
+        
+        .btn-responsive {
+            border: 1px solid;
+            display: flex;
+            justify-matriz-content: space-between;
+            align-items: center;
+        }
+        
+        .btn-responsive-img img {
+            width: 100px;
+        }
+        
+        #listIcon {
+            font-size: 35px;
+        }
+        
+        #xIcon {
+            font-size: 28px;
+            display: none;
+        }
+        
+        #navbarBtns {
+            display: none;
+            position: absolute;
+            left: 0;
+            height: 108px;
+            width: 100%;
+            padding: 0px 18px;
+            background-color: #000b21c2;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            justify-matriz-content: end;
+            align-items: end;
+        }
+        
+        #pagar-conta {
+            background-color: #00ccff;
+            padding: 20px 60px;
+            margin-top: -2px;
+            border: 1px solid white;
+            color: white;
+        }
+        
+        #localLogin {
+            margin-top: 8px;
+            border: 1px solid;
+            width: 90px;
+            padding: 6px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#testeBtnScroll">Clique aqui para descer!!</a>
+    <div class="matriz-container-fluid navbar-mobile-matriz-content">
+        <div class="matriz-container">
+            <div class="btn-responsive">
+                <div class="btn-responsive-img">
+                    <img src="https://drmeducacao.com.br/newGolpagPage-Isaias/img/logos/golpag.png" alt="Logo GolPag" />
+                </div>
+                <div class="btn-responsive-icons">
+                    <i class="bi bi-list" id="listIcon" onclick="mostrarBtnNavibar()"></i>
+                    <i class="bi bi-x-lg" id="xIcon" onclick="esconderBtnNavibar()"></i>
+                </div>
+            </div>
+            <div class="navbar-btns" id="navbarBtns">
+                <ul class="navbar-nav">
+                    <li id="pagar-conta">
+                        <a class="btn-login-aluno" href="https://golpag.com.br/negociacao/" target="_blank">Sou aluno, quero pagar minha dívida</a
+							>
+						</li>
+						<li id="localLogin">
+							<a class="btn-login" id="callLogin">Login</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 
+
+
+-->
+            <div id="form-login-mobile">
+                <div class="form-login-title">
+                    <span>INFORME SEU:</span>
+                    <div id="form-login-fechar">x</div>
+                </div>
+                <input autocomplete="off" placeholder="Login" class="input-control-login" type="text" name="login_login" id="form-login-login" /><input autocomplete="off" placeholder="Senha" class="input-control-login" type="password" name="senha_login"
+                    id="form-login-senha" /><input autocomplete="off" class="input-control-login" style="display: none" type="password" /><button class="button-control-login btn-blue" id="form-login-entrar" type="submit">
+						Entrar</button
+					><span id="form-login-recuperar-senha">RECUPERAR SENHA</span>
+					<div id="form-login-label"></div>
+					<span id="form-login-ativar-chave">MEU PRIMEIRO ACESSO</span>
+				</div>
+				<!-- 
+
+    
+-->
+			</div>
+		</div>
+		<header>
+			<h1>
+				Teste de aplicação <br />para DRM Educação da <br />cidade de São José
+				dos Campos - SP
+			</h1>
+		</header>
+		<script>
+			let btnsNavbar = document.getElementById('navbarBtns');
+			let listIcon = document.getElementById('listIcon');
+			let xIcon = document.getElementById('xIcon');
+			const mostrarBtnNavibar = () => {
+				btnsNavbar.style.display = 'block';
+				if (btnsNavbar.style.display === 'block') {
+					listIcon.style.display = 'none';
+					xIcon.style.display = 'block';
+				}
+			};
+			const esconderBtnNavibar = () => {
+				btnsNavbar.style.display = 'none';
+				xIcon.style.display = 'none';
+				listIcon.style.display = 'block';
+			};
+		</script>
+		<!-- FIM NAVBAR -->
+		<!-- GALERIA IMAGENS DISPOSITIVOS MENORES QUE 500px ! -->
+		<div
+			class="matriz-container-carousel-galeria"
+			id="slider-matriz-container-galeria"
+		>
+			<div class="carousel slide" id="slider-galeria" data-bs-ride="carousel">
+				<div class="carousel-indicators indicadores">
+					<button
+						type="button"
+						data-bs-target="#slider-galeria"
+						data-bs-slide-to="0"
+						aria-label="slide 1"
+					></button>
+                <button type="button" data-bs-target="#slider-galeria" data-bs-slide-to="1" aria-label="slide 2" class=""></button>
+                <button type="button" data-bs-target="#slider-galeria" data-bs-slide-to="2" aria-label="slide 3" class=""></button>
+                <button type="button" data-bs-target="#slider-galeria" data-bs-slide-to="3" aria-label="slide 4" class=""></button>
+                <button type="button" data-bs-target="#slider-galeria" data-bs-slide-to="4" aria-label="slide 5" class=""></button>
+                <button type="button" data-bs-target="#slider-galeria" data-bs-slide-to="5" aria-label="slide 6" class="active" aria-current="true"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item item-carrossel w-100">
+                    <div class="carousel-caption conteudo-carrossel">
+                        <img src="img/imagem6.jpg" alt="imagem 1" class="checked-img" />
+                    </div>
+                </div>
+                <div class="carousel-item item-carrossel w-100">
+                    <div class="carousel-caption conteudo-carrossel">
+                        <img src="img/imagem5.jpg" alt="imagem 2" class="checked-img" />
+                    </div>
+                </div>
+                <div class="carousel-item item-carrossel w-100">
+                    <div class="carousel-caption conteudo-carrossel">
+                        <img src="img/imagem4.jpg" alt="imagem 3" class="checked-img" />
+                    </div>
+                </div>
+                <div class="carousel-item item-carrossel w-100">
+                    <div class="carousel-caption conteudo-carrossel">
+                        <img src="img/imagem3.jpg" alt="imagem 4" class="checked-img" />
+                    </div>
+                </div>
+                <div class="carousel-item item-carrossel w-100">
+                    <div class="carousel-caption conteudo-carrossel">
+                        <img src="img/imagem2.jpg" alt="imagem 5" class="checked-img" />
+                    </div>
+                </div>
+                <div class="carousel-item item-carrossel w-100 active">
+                    <div class="carousel-caption conteudo-carrossel">
+                        <img src="img/imagem1.jpg" alt="imagem 6" class="checked-img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- GALERIA IMAGENS DISPOSITIVOS MENORES QUE 500px -->
+    <div id="div-vazia-teste" style="width: 100%; height: 800px">
+        <h1>Div vazia...</h1>
+    </div>
+    <div id="testeBtnScroll">
+        <p>Apertou o botão para chegar aqui???</p>
+    </div>
+</body>
+
+</html>

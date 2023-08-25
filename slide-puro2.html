@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" matriz-content="IE=edge" />
+    <meta name="viewport" matriz-content="width=device-width, initial-scale=1.0" />
+    <title>Slide com Html, CSS e Js</title>
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Icons Google-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+        
+        #sessaoSlideTime {
+            width: 100%;
+            background-color: #fff;
+        }
+        
+        #containerSlideFotosTime {
+            width: 95%;
+            margin: auto;
+            padding: 50px 0 100px 0;
+        }
+        
+        #tituloFotosTime {
+            font-family: 'Sora', Sans-serif;
+            font-size: 23px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .sliderTime {
+            margin: 0 auto;
+            width: 790px;
+            height: 187px;
+            overflow: hidden;
+        }
+        
+        .slidesTime {
+            width: 400%;
+            height: 400px;
+            display: flex;
+        }
+        
+        .slidesTime input {
+            display: none;
+        }
+        
+        .slideTime {
+            width: 6.25%;
+            position: relative;
+            transition: 2s;
+        }
+        
+        .slideTimeItems {
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        
+        .slideTimeImgNomeDisc {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .slideTimeImgNomeDisc img {
+            width: 120px;
+            border-radius: 50%;
+        }
+        
+        .slideTimeImgNomeDisc p {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.4;
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        .manual-navegacao-time {
+            position: absolute;
+            width: 791px;
+            margin-top: -160px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .manual-btn-time {
+            border: 1px solid #000000;
+            padding: 2px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        
+        .manual-btn-time:not(:last-child) {
+            margin-right: 15px;
+        }
+        
+        .manual-btn-time:hover {
+            cursor: pointer;
+        }
+        
+        #radio1Time:checked~.primeiro {
+            margin-left: 0%;
+        }
+        
+        #radio2Time:checked~.primeiro {
+            margin-left: -6.25%;
+        }
+        
+        #radio3Time:checked~.primeiro {
+            margin-left: -12.5%;
+        }
+        
+        #radio4Time:checked~.primeiro {
+            margin-left: -18.75%;
+        }
+        
+        #radio5Time:checked~.primeiro {
+            margin-left: -25%;
+        }
+        
+        #radio6Time:checked~.primeiro {
+            margin-left: -31.25%;
+        }
+        
+        #radio7Time:checked~.primeiro {
+            margin-left: -37.5%;
+        }
+        
+        #radio8Time:checked~.primeiro {
+            margin-left: -43.75%;
+        }
+        
+        #radio9Time:checked~.primeiro {
+            margin-left: -50%;
+        }
+        
+        #radio10Time:checked~.primeiro {
+            margin-left: -56.25%;
+        }
+        
+        #radio11Time:checked~.primeiro {
+            margin-left: -62.5%;
+        }
+        
+        #radio12Time:checked~.primeiro {
+            margin-left: -68.75%;
+        }
+        
+        #radio13Time:checked~.primeiro {
+            margin-left: -75%;
+        }
+        
+        .navegacao-automatica div {
+            border: 1px solid #000000;
+            background-color: #000000;
+            padding: 2px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        
+        .navegacao-automatica {
+            position: absolute;
+            width: 791px;
+            margin-top: 240px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .navegacao-automatica div:not(:last-child) {
+            margin-right: 15px;
+        }
+        
+        #radio1Time:checked~.navegacao-automatica .auto-btn1-Time,
+        #radio2Time:checked~.navegacao-automatica .auto-btn2-Time,
+        #radio3Time:checked~.navegacao-automatica .auto-btn3-Time,
+        #radio4Time:checked~.navegacao-automatica .auto-btn4-Time,
+        #radio5Time:checked~.navegacao-automatica .auto-btn5-Time,
+        #radio6Time:checked~.navegacao-automatica .auto-btn6-Time,
+        #radio7Time:checked~.navegacao-automatica .auto-btn7-Time,
+        #radio8Time:checked~.navegacao-automatica .auto-btn8-Time,
+        #radio9Time:checked~.navegacao-automatica .auto-btn9-Time,
+        #radio10Time:checked~.navegacao-automatica .auto-btn10-Time,
+        #radio11Time:checked~.navegacao-automatica .auto-btn11-Time,
+        #radio12Time:checked~.navegacao-automatica .auto-btn12-Time,
+        #radio13Time:checked~.navegacao-automatica .auto-btn13-Time {
+            background-color: #f0e9e9;
+            border: 1px solid #f0e9e9;
+        }
+        
+        #btnProxVoltTime {
+            width: 791px;
+            position: relative;
+        }
+        
+        #btnProxSlideTime {
+            position: absolute;
+            right: 0;
+            top: 75px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        #btnVoltSlideTime {
+            position: absolute;
+            top: 75px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .btnChange {
+            position: relative;
+            font-size: 38px;
+            z-index: 10;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sessão Slide Time -->
+    <div id="sessaoSlideTime">
+        <div id="containerSlideFotosTime">
+            <h3 id="tituloFotosTime">
+                CONHEÇA O TIME QUE VAI TE LEVAR ATÉ A APROVAÇÃO!
+            </h3>
+            <div id="boxsliderTimesTime" class="sliderTime">
+                <!-- Botões de próximo/voltar -->
+                <div id="btnProxVoltTime">
+                    <div id="btnProxSlideTime">
+                        <span class="material-symbols-outlined btnChange">
+								chevron_right
+							</span>
+                    </div>
+                    <div id="btnVoltSlideTime">
+                        <span class="material-symbols-outlined btnChange">
+								chevron_left
+							</span>
+                    </div>
+                </div>
+                <!-- Fim Botões de próximo/voltar-->
+                <div id="conteudoSlideFatos" class="slidesTime">
+                    <!-- Botões Radio -->
+                    <input type="radio" name="radio-btn" id="radio1Time" />
+                    <input type="radio" name="radio-btn" id="radio2Time" />
+                    <input type="radio" name="radio-btn" id="radio3Time" />
+                    <input type="radio" name="radio-btn" id="radio4Time" />
+                    <input type="radio" name="radio-btn" id="radio5Time" />
+                    <input type="radio" name="radio-btn" id="radio6Time" />
+                    <input type="radio" name="radio-btn" id="radio7Time" />
+                    <input type="radio" name="radio-btn" id="radio8Time" />
+                    <input type="radio" name="radio-btn" id="radio9Time" />
+                    <input type="radio" name="radio-btn" id="radio10Time" />
+                    <input type="radio" name="radio-btn" id="radio11Time" />
+                    <input type="radio" name="radio-btn" id="radio12Time" />
+                    <input type="radio" name="radio-btn" id="radio13Time" />
+
+                    <!--Fim  Botões Radio -->
+
+                    <!-- Slide Fotos Time -->
+                    <div id="slideFotoTimeItem" class="slideTime primeiro">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc" draggable="true">
+                                <img src="https://wing.com.br/Loja/Imagens/taveira20720221512483.png" alt="Foto autor" />
+                                <p class="slideTimeNome">
+                                    Taveira<br /> NATUREZA
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/michaelmartins2172022832547.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Michael Martins<br />NATUREZA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/diogodossantos217202281358.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Diego dos Santos<br />NATUREZA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/anapaula1217202275927557.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Ana Paula Colaço<br />LINGUAGENS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/arturgomes2172022804991.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Artur Gomes<br />LINGUAGENS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/rodrigopaes21720228339793.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Rodrigo Paes<br />LINGUAGENS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/aquilasartori217202275947809.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Áquila Sartori<br />REDAÇÃO</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/anacecylia2172022759097.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Ana Celylia<br />REDAÇÃO</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/caioamerico21720228026527.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Caio Américo<br />HUMANAS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/evelynnetamara21720228124995.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Evelynne Tamara<br />HUMANAS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/janainacunha2172022827268.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Janaina Cunha<br />HUMANAS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/hugoleonardo21720228151486.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Hugo Leonardo<br />HUMANAS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/rafaelvirginio21720228324479.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Rafael Virginio<br />HUMANAS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/luizneto21720228223926.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Luiz Neto<br />HUMANAS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/diegolima21720228045731.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Diego Lima<br />MATEMÁTICA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slideFotoTimeItem" class="slideTime">
+                        <div class="slideTimeItems">
+                            <div class="slideTimeImgNomeDisc">
+                                <img src="https://wing.com.br/Loja/Imagens/marianalima21720228236765.jpg" alt="Foto autor" />
+                                <p class="slideTimeNome">Mariana Lima<br />MATEMÁTICA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fim Slide Foto Time -->
+                    <!-- Navegação automatica -->
+                    <div class="navegacao-automatica" id="navegacaoAutoslidesTime">
+                        <div class="auto-btn1-Time" id="btnNavegAuto1Time"></div>
+                        <div class="auto-btn2-Time" id="btnNavegAuto2Time"></div>
+                        <div class="auto-btn3-Time" id="btnNavegAuto3Time"></div>
+                        <div class="auto-btn4-Time" id="btnNavegAuto4Time"></div>
+                        <div class="auto-btn5-Time" id="btnNavegAuto5Time"></div>
+                        <div class="auto-btn6-Time" id="btnNavegAuto6Time"></div>
+                        <div class="auto-btn7-Time" id="btnNavegAuto7Time"></div>
+                        <div class="auto-btn8-Time" id="btnNavegAuto8Time"></div>
+                        <div class="auto-btn9-Time" id="btnNavegAuto9Time"></div>
+                        <div class="auto-btn10-Time" id="btnNavegAuto10Time"></div>
+                        <div class="auto-btn11-Time" id="btnNavegAuto11Time"></div>
+                        <div class="auto-btn12-Time" id="btnNavegAuto12Time"></div>
+                        <div class="auto-btn13-Time" id="btnNavegAuto13Time"></div>
+                    </div>
+                    <!-- Fim Navegação automatica -->
+                </div>
+                <!-- Label Navegação -->
+                <div class="manual-navegacao-time" id="menuNavegSlideTime">
+                    <label for="radio1Time" class="manual-btn-time"></label>
+                    <label for="radio2Time" class="manual-btn-time"></label>
+                    <label for="radio3Time" class="manual-btn-time"></label>
+                    <label for="radio4Time" class="manual-btn-time"></label>
+                    <label for="radio5Time" class="manual-btn-time"></label>
+                    <label for="radio6Time" class="manual-btn-time"></label>
+                    <label for="radio7Time" class="manual-btn-time"></label>
+                    <label for="radio8Time" class="manual-btn-time"></label>
+                    <label for="radio9Time" class="manual-btn-time"></label>
+                    <label for="radio10Time" class="manual-btn-time"></label>
+                    <label for="radio11Time" class="manual-btn-time"></label>
+                    <label for="radio12Time" class="manual-btn-time"></label>
+                    <label for="radio13Time" class="manual-btn-time"></label>
+                </div>
+                <!-- Fim Label Navegação -->
+            </div>
+        </div>
+    </div>
+    <!-- Fim Sessão Slide Time -->
+
+    <script>
+        //Mudar slide automático
+        let contador = 1;
+        document.getElementById('radio1Time').checked = true;
+        setInterval(function() {
+            nextFacts();
+        }, 5000);
+
+        function nextFacts() {
+            contador++;
+            if (contador > 13) {
+                contador = 1;
+            }
+            document.getElementById('radio' + contador + 'Time').checked = true;
+        }
+        //Mudar slide com setas
+        let btnProxSlideTime = document.getElementById('btnProxSlideTime');
+        let btnVoltSlideTime = document.getElementById('btnVoltSlideTime');
+
+        //Próximo slide
+        btnProxSlideTime.addEventListener('click', function() {
+            contador++;
+            if (contador > 13) {
+                contador = 1;
+            }
+            document.getElementById('radio' + contador + 'Time').checked = true;
+        });
+        //Slide anterior
+        btnVoltSlideTime.addEventListener('click', function() {
+            contador--;
+            if (contador < 1) {
+                contador = 13;
+            }
+            document.getElementById('radio' + contador + 'Time').checked = true;
+        });
+    </script>
+</body>
+
+</html>

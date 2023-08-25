@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<htm lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" matriz-content="IE=edge" />
+        <meta name="viewport" matriz-content="width=device-width, initial-scale=1.0" />
+        <title>Vestibular Alpha</title>
+
+        <style>
+            .container-vestibular {
+                width: 100%;
+                margin: auto;
+                background-image: url('https://wing.com.br/Loja/Imagens/base14720221811110.png');
+                background-size: cover;
+            }
+            
+            #form-vestibular-alpha {
+                width: 40%;
+                display: block;
+                margin: auto;
+                font-family: Arial, Helvetica, sans-serif;
+                /* Remover */
+                /* border: 1px solid red;
+                background-color: white; */
+            }
+            
+            .logo-vestibular {
+                display: flex;
+                justify-content: left;
+                flex-direction: column;
+                margin-top: 30px;
+            }
+            
+            .logo-vestibular img {
+                width: 250px;
+            }
+            
+            .logo-vestibular hr,
+            .form-vestibular hr {
+                width: 100%;
+                margin-top: 30px;
+                margin-bottom: 0;
+                height: 2.5px;
+                background-color: #BEBFC1;
+                border: none;
+            }
+            
+            .form-vestibular {
+                display: block;
+                text-align: left;
+            }
+            
+            .form-vestibular h3 {
+                font-size: 17px;
+                margin-top: 0;
+                color: #393B8F;
+            }
+            
+            .curso-vestibular-alpha {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+            
+            .curso-vestibular-alpha label {
+                font-size: 12px;
+                color: #7A7A7A;
+            }
+            
+            .curso-vestibular-alpha input {
+                border: 1.5px solid #A7A8AA;
+                height: 25px;
+                border-radius: 8px;
+            }
+            
+            .curso-vestibular-alpha select {
+                border: 1.5px solid #A7A8AA;
+                height: 32px;
+                border-radius: 8px;
+            }
+            
+            #label-curso-vestibular {
+                font-size: 17px;
+                font-weight: bold;
+                color: #393B8F;
+            }
+            
+            option {
+                height: 55px;
+            }
+            
+            @media (max-width: 992px) {
+                #form-vestibular-alpha {
+                    width: 75%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-vestibular">
+            <div id="form-vestibular-alpha">
+                <div class="logo-vestibular">
+                    <img src="https://wing.com.br/Loja/Imagens/vestibular1472022181146334.png" alt="Imagem Vestibular Alpha" />
+                    <hr />
+                </div>
+                <div class="form-vestibular">
+                    <h3>Faça já sua inscrição!</h3>
+                    <form>
+                        <div class="curso-vestibular-alpha">
+                            <label>Nome Completo</label>
+                            <input type="text" id="nome-candidato" />
+                        </div>
+                        <div class="curso-vestibular-alpha">
+                            <label>Telefone</label>
+                            <input type="number" id="telefone-candidato" />
+                        </div>
+                        <div class="curso-vestibular-alpha">
+                            <label>E-mail</label>
+                            <input type="email" id="email-candidato" />
+                        </div>
+                        <hr>
+                        <div class="curso-vestibular-alpha">
+                            <label id="label-curso-vestibular">Curso:</label>
+                            <select name="cursos-vestibular" id="cursos-vestibular">
+							<option value="Curso"></option>
+							<option value="ADS">Análise e Desenvolvimento de Sistemas</option>
+							<option value="EF">Educação Física</option>
+							<option value="EN">Enfermagem</option>
+							<option value="PS">Psicologia</option>
+							<option value="RH">Recursos Humanos</option>
+							<option value="LG">Logística</option>
+							<option value="PD">Pedagogia</option>
+						</select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script></script>
+    </body>
+
+    </htm

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" matriz-content="IE=edge" />
+    <meta name="viewport" matriz-content="width=device-width, initial-scale=1.0" />
+    <title>Faixa horizontal</title>
+
+    <style>
+        .container {
+            width: 100%;
+            padding: 100px 0;
+            margin: -1px 0;
+            background-color: aqua;
+            position: relative;
+            background-image: linear-gradient(at top, #050505, #f29f05);
+        }
+        
+        .elementor-shape[data-negative='false'].elementor-shape-bottom,
+        .elementor-shape[data-negative='true'].elementor-shape-top {
+            transform: rotate3d(0, -1, 0, 180deg);
+        }
+        
+        .elementor-shape-bottom {
+            bottom: -1px;
+        }
+        
+        .elementor-shape {
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            direction: ltr;
+        }
+        
+        .elementor *,
+        .elementor :after,
+        .elementor :before {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .elementor-937 .elementor-element.elementor-element-1d302801>.elementor-shape-bottom svg {
+            width: calc(100% + 1.3px);
+            height: 40px;
+        }
+        
+        .elementor-shape-bottom:not([data-negative='true']) svg {
+            z-index: -1;
+        }
+        
+        .elementor-shape svg {
+            display: block;
+            width: calc(100% + 1.3px);
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        
+        element.style {}
+        
+        .elementor-937 .elementor-element.elementor-element-1d302801>.elementor-shape-bottom svg {
+            width: calc(100% + 1.3px);
+            height: 40px;
+        }
+        
+        .elementor-shape-bottom:not([data-negative='true']) svg {
+            z-index: -1;
+        }
+        
+        .elementor *,
+        .elementor :after,
+        .elementor :before {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        *,
+        :after,
+        :before {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        svg:not(:root) {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="elementor-shape elementor-shape-bottom" data-negative="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 131.1" preserveAspectRatio="none">
+					<path
+						class="elementor-shape-fill"
+						d="M0 0L2600 0 2600 69.1 0 0z"
+					></path>
+					<path
+						class="elementor-shape-fill"
+						style="opacity: 0.5"
+						d="M0 0L2600 0 2600 69.1 0 69.1z"
+					></path>
+					<path
+						class="elementor-shape-fill"
+						style="opacity: 0.25"
+						d="M2600 0L0 0 0 130.1 2600 69.1z"
+					></path>
+				</svg>
+        </div>
+    </div>
+
+    <script></script>
+</body>
+
+</html>

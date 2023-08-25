@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" matriz-content="IE=edge" />
+    <meta name="viewport" matriz-content="width=device-width, initial-scale=1.0" />
+    <title>Teste do slide do grape</title>
+
+    <style>
+        body {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+        
+        .slides input {
+            display: none;
+        }
+        
+        .slideImgNome img {
+            width: 60px;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+        
+        .manual-btn:not(:last-child) {
+            margin-right: 40px;
+        }
+        
+        #radio1:checked~.first {
+            margin-left: 0px;
+        }
+        
+        #radio2:checked~.first {
+            margin-left: -16.66%;
+        }
+        
+        #radio3:checked~.first {
+            margin-left: -33.32%;
+        }
+        
+        #radio4:checked~.first {
+            margin-left: -49.98%;
+        }
+        
+        #radio5:checked~.first {
+            margin-left: -66.64%;
+        }
+        
+        #radio6:checked~.first {
+            font-family: Sora;
+        }
+        
+        .navigation-auto div {
+            border-top-width: 2px;
+            border-right-width: 2px;
+            border-bottom-width: 2px;
+            border-left-width: 2px;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            border-top-color: gray;
+            border-right-color: gray;
+            border-bottom-color: gray;
+            border-left-color: gray;
+            border-image-source: initial;
+            border-image-slice: initial;
+            border-image-width: initial;
+            border-image-outset: initial;
+            border-image-repeat: initial;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            cursor: pointer;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            transition-property: all;
+        }
+        
+        .navigation-auto div:not(:last-child) {
+            margin-right: 40px;
+        }
+        
+        #radio1:checked~.navigation-auto .auto-btn1,
+        #radio2:checked~.navigation-auto .auto-btn2,
+        #radio3:checked~.navigation-auto .auto-btn3,
+        #radio4:checked~.navigation-auto .auto-btn4,
+        #radio5:checked~.navigation-auto .auto-btn5,
+        #radio6:checked~.navigation-auto .auto-btn6 {
+            background-color: green;
+        }
+        
+        .navegacao-automatica div {
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            border-top-color: rgb(0, 0, 0);
+            border-right-color: rgb(0, 0, 0);
+            border-bottom-color: rgb(0, 0, 0);
+            border-left-color: rgb(0, 0, 0);
+            border-image-source: initial;
+            border-image-slice: initial;
+            border-image-width: initial;
+            border-image-outset: initial;
+            border-image-repeat: initial;
+            background-color: rgb(0, 0, 0);
+            padding-top: 2px;
+            padding-right: 2px;
+            padding-bottom: 2px;
+            padding-left: 2px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            cursor: pointer;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            transition-property: all;
+        }
+        
+        .navegacao-automatica div:not(:last-child) {
+            margin-right: 15px;
+        }
+        
+        #radio1:checked~.navigation-auto .auto-btn1,
+        #radio2:checked~.navigation-auto .auto-btn2,
+        #radio3:checked~.navigation-auto .auto-btn3,
+        #radio4:checked~.navigation-auto .auto-btn4,
+        #radio5:checked~.navigation-auto .auto-btn5 {
+            background-color: green;
+        }
+        
+        .slideItems p {
+            /* color: rgb(255, 255, 255); */
+            color: #000;
+            font-family: Sora;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .slideNome br {
+            color: rgb(255, 200, 0);
+        }
+        
+        p .slideNome br {
+            color: rgb(255, 200, 0);
+        }
+        
+        .slideImgNome p {
+            color: rgb(255, 200, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div data-gjs-highlightable="true" id="containerSlideFatos" data-gjs-type="default" draggable="true" class="">
+        <div data-gjs-highlightable="true" id="boxSliders" data-gjs-type="default" draggable="true" class="slider">
+            <!-- Botões de próximo/voltar -->
+            <div data-gjs-highlightable="true" id="btnNextBack" data-gjs-type="default" draggable="true">
+                <div data-gjs-highlightable="true" id="btnNextSlide" data-gjs-type="default" draggable="true">
+                    <span data-gjs-highlightable="true" id="ilqfdb" data-gjs-type="text" draggable="true" class="material-symbols-outlined btnChange">
+							chevron_right
+						</span>
+                </div>
+                <div data-gjs-highlightable="true" id="btnBackSlide" data-gjs-type="default" draggable="true">
+                    <span data-gjs-highlightable="true" id="i50iti" data-gjs-type="text" draggable="true" class="material-symbols-outlined btnChange">
+							chevron_left
+						</span>
+                </div>
+            </div>
+            <!-- Fim Botões de próximo/voltar-->
+            <div data-gjs-highlightable="true" id="conteudoSlideFatos" data-gjs-type="default" draggable="true" class="slides">
+                <!-- Botões Radio -->
+                <input id="radio1" data-gjs-type="radio" draggable="true" type="radio" name="radio-btn" autocomplete="off" />
+                <input id="radio2" data-gjs-type="radio" draggable="true" type="radio" name="radio-btn" autocomplete="off" />
+                <input id="radio3" data-gjs-type="radio" draggable="true" type="radio" name="radio-btn" autocomplete="off" />
+                <input id="radio4" data-gjs-type="radio" draggable="true" type="radio" name="radio-btn" autocomplete="off" />
+                <input id="radio5" data-gjs-type="radio" draggable="true" type="radio" name="radio-btn" autocomplete="off" />
+                <!--Fim  Botões Radio -->
+                <!-- Slide Textos -->
+                <div data-gjs-highlightable="true" id="slideTextoItem" data-gjs-type="default" draggable="true" class="slide first">
+                    <div data-gjs-highlightable="true" id="iwkk6p" data-gjs-type="default" draggable="true" class="slideItems">
+                        <p data-gjs-highlightable="true" id="ifhe2q" data-gjs-type="text" draggable="true" class="slideTexto">
+                            "Me encantei com a metologia facilitada de estudo que o Aprova Nexus proporciona, a experiência, desde o ambiente virtual, até os e-books e as assessorias com os monitores tornam o estudo mais leve, a sensação de estar mesmo em uma sala de aula. Professores
+                            são excelentes, a correção da redação pela professora também é super detalhada e personalizada. Estou surpresa com a qualidade do curso que, mesmo virtual e com um preço abaixo do mercado, entrega uma qualidade absurda. Muito
+                            bom, de verdade!!!"
+                        </p>
+                        <div data-gjs-highlightable="true" id="i0jbjd" data-gjs-type="default" draggable="true" class="slideImgNome">
+                            <img id="ikytag" data-gjs-type="image" draggable="true" src="https://aprovanexus.com.br/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-28-at-02.05.25.jpeg" alt="Foto autor" />
+                            <p data-gjs-highlightable="true" id="iev249" data-gjs-type="text" draggable="true" class="slideNome">
+                                <b id="ircp75" data-gjs-type="text" draggable="true">Ana Laura
+									</b>
+                                <br id="i7ycst" data-gjs-type="default" draggable="true" />@analauradabul_
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div data-gjs-highlightable="true" id="slideTextoItem-2" data-gjs-type="default" draggable="true" class="slide">
+                    <div data-gjs-highlightable="true" id="iwwcc3" data-gjs-type="default" draggable="true" class="slideItems">
+                        <p data-gjs-highlightable="true" id="imqksz" data-gjs-type="text" draggable="true" class="slideTexto">
+                            "A plataforma do aprova Nexus é super completa, tem todas as disciplinas e todos os conteúdos que caem no Enem, além disso contam com um super banco de questões que auxilia demais no estudo ativo e absorção do conteúdo visto diário. Outro ponto super
+                            positivo é que em algumas disciplinas a gente pode escolher o professor e ver com qual didática a gente se assemelha mais. As correções de redação são super rápidas e super detalhadas. Estou gostando bastante e está complementando
+                            demais minha rotina na preparação do ENEM."
+                        </p>
+                        <div data-gjs-highlightable="true" id="ist6ct" data-gjs-type="default" draggable="true" class="slideImgNome">
+                            <img id="iyvnwl" data-gjs-type="image" draggable="true" src="https://aprovanexus.com.br/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-28-at-01.42.08.jpeg" alt="Foto autor" class="" />
+                            <p data-gjs-highlightable="true" id="ikq548" data-gjs-type="text" draggable="true" class="slideNome">
+                                <b id="idhr6f" data-gjs-type="text" draggable="true">Andson Dantas
+									</b>
+                                <br id="imsosh" data-gjs-type="default" draggable="true" />@andson_dantas1
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div data-gjs-highlightable="true" id="slideTextoItem-3" data-gjs-type="default" draggable="true" class="slide">
+                    <div data-gjs-highlightable="true" id="iz9vsl" data-gjs-type="default" draggable="true" class="slideItems">
+                        <p data-gjs-highlightable="true" id="iac63a" data-gjs-type="text" draggable="true" class="slideTexto">
+                            O Aprova Nexus é um curso super completo. Vejo que a equipe do curso se esforça diariamente para melhorar em todos os aspectos, seja em organização, conteúdo ou aulas. A assessoria é ótima. Minha assessora é super atenciosa e prestativa, sempre com novas
+                            técnicas de estudo e horários baseados na minha rotina. Os monitores são extremamente preparados para tirar nossas dúvidas. Os materiais são completos e práticos, com o necessário para nos ajudar a aprender o conteúdo. Toda
+                            a equipe do curso se empenha muito para nos dar o melhor ensino para o ENEM. Todos super atenciosos (desde os atendentes aos professores) fazendo com que eu me sinta acolhida em um momento tão tenso como o ENEM."
+                        </p>
+                        <div data-gjs-highlightable="true" id="iebeej" data-gjs-type="default" draggable="true" class="slideImgNome">
+                            <img id="i25oth" data-gjs-type="image" draggable="true" src="https://aprovanexus.com.br/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-28-at-01.42.08-1.jpeg" alt="Foto autor" />
+                            <p data-gjs-highlightable="true" id="ilpqql" data-gjs-type="text" draggable="true" class="slideNome">
+                                <b id="imde1j" data-gjs-type="text" draggable="true">Clara Noronha
+									</b>
+                                <br id="i19fsy" data-gjs-type="default" draggable="true" />@noronha_clara
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div data-gjs-highlightable="true" id="slideTextoItem-4" data-gjs-type="default" draggable="true" class="slide">
+                    <div data-gjs-highlightable="true" id="ijz9gg" data-gjs-type="default" draggable="true" class="slideItems">
+                        <p data-gjs-highlightable="true" id="igbkvw" data-gjs-type="text" draggable="true" class="slideTexto">
+                            "O Aprova Nexus é, sem dúvida, uma excelente opção para quem vai prestar ENEM! A plataforma é super completa e fácil de navegar, o material é bastante didático com conteúdos aprofundados, os professores são excelentes, a redação é corrigida de forma clara
+                            e criteriosa e o acompanhamento individual do assessor faz toda diferença para a evolução dos conteúdos e acertos. Acredito que a soma de todas essas ferramentas tornam a caminhada mais sólida e tranquila na busca pela aprovação."
+                        </p>
+                        <div data-gjs-highlightable="true" id="iv25lk" data-gjs-type="default" draggable="true" class="slideImgNome">
+                            <img id="i8qfs8" data-gjs-type="image" draggable="true" src="https://aprovanexus.com.br/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-28-at-01.42.08-4.jpeg" alt="Foto autor" />
+                            <p data-gjs-highlightable="true" id="ibynlu" data-gjs-type="text" draggable="true" class="slideNome">
+                                <b id="iej4lx" data-gjs-type="text" draggable="true">Priscila Lima
+									</b>
+                                <br id="ilt67d" data-gjs-type="default" draggable="true" />@priscilalimag
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div data-gjs-highlightable="true" id="slideTextoItem-5" data-gjs-type="default" draggable="true" class="slide">
+                    <div data-gjs-highlightable="true" id="i65aye" data-gjs-type="default" draggable="true" class="slideItems">
+                        <p data-gjs-highlightable="true" id="it21no" data-gjs-type="text" draggable="true" class="slideTexto">
+                            "Só tenho elogios a fazer o curso do aprova Nexus que com sua metodologia única impulsiona seus alunos a extrair o melhor de si, possibilitando que um dia cheguemos onde os nossos sonhos são reais. No Aprova temos um tratamento diferenciado, não só com
+                            suas aulas e materiais enriquecedores, mas no acompanhamento próximo e personalizado, que nos permite desempenhar com maior eficiência nossa individualidade como vestibulandos."
+                        </p>
+                        <div data-gjs-highlightable="true" id="izky8l" data-gjs-type="default" draggable="true" class="slideImgNome">
+                            <img id="ibieck" data-gjs-type="image" draggable="true" src="https://aprovanexus.com.br/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-28-at-01.42.08-3.jpeg" alt="Foto autor" />
+                            <p data-gjs-highlightable="true" id="iat57e" data-gjs-type="text" draggable="true" class="slideNome">
+                                <b id="ip3ero" data-gjs-type="text" draggable="true">Tunaya
+									</b>
+                                <br id="id859y" data-gjs-type="default" draggable="true" />@tunaya_sb
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div data-gjs-highlightable="true" id="slideTextoItem-6" data-gjs-type="default" draggable="true" class="slide">
+                    <div data-gjs-highlightable="true" id="ii9zzs" data-gjs-type="default" draggable="true" class="slideItems">
+                        <p data-gjs-highlightable="true" id="i2deuk" data-gjs-type="text" draggable="true" class="slideTexto">
+                            "bom dia! to gostando bastante, a assessoria ta me ajudando muito a manter rotina e a cumprir minhas metas, e na redação eu pensei que eu tava bem mas vi que consigo evoluir mais!!"
+                        </p>
+                        <div data-gjs-highlightable="true" id="io7bgt" data-gjs-type="default" draggable="true" class="slideImgNome">
+                            <img id="im1boi" data-gjs-type="image" draggable="true" src="https://aprovanexus.com.br/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-28-at-01.42.08-2.jpeg" alt="Foto autor" />
+                            <p data-gjs-highlightable="true" id="i77n9q" data-gjs-type="text" draggable="true" class="slideNome">
+                                <b id="iodjeg" data-gjs-type="text" draggable="true">Fernanda Campos
+									</b>
+                                <br id="ioa9ef" data-gjs-type="default" draggable="true" />@fernandacamposra
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fim Slide Textos -->
+                <!-- Navegação automatica -->
+                <div data-gjs-highlightable="true" id="navegacaoAutoSlides" data-gjs-type="default" draggable="true" class="navigation-auto">
+                    <div data-gjs-highlightable="true" id="btnNavegAuto1" data-gjs-type="default" draggable="true" class="auto-btn1"></div>
+                    <div data-gjs-highlightable="true" id="btnNavegAuto2" data-gjs-type="default" draggable="true" class="auto-btn2"></div>
+                    <div data-gjs-highlightable="true" id="btnNavegAuto3" data-gjs-type="default" draggable="true" class="auto-btn3"></div>
+                    <div data-gjs-highlightable="true" id="btnNavegAuto4" data-gjs-type="default" draggable="true" class="auto-btn4"></div>
+                    <div data-gjs-highlightable="true" id="btnNavegAuto5" data-gjs-type="default" draggable="true" class="auto-btn5"></div>
+                </div>
+                <!-- Fim Navegação automatica -->
+            </div>
+            <!-- Label Navegação -->
+            <div data-gjs-highlightable="true" id="menuNavegSlide" data-gjs-type="default" draggable="true" class="manual-navigation">
+                <label data-gjs-highlightable="true" id="idjdq4" data-gjs-type="label" draggable="true" for="radio1" class="manual-btn">Label</label
+					>
+					<label
+						data-gjs-highlightable="true"
+						id="it2auh"
+						data-gjs-type="label"
+						draggable="true"
+						for="radio2"
+						class="manual-btn"
+						>Label</label
+					>
+					<label
+						data-gjs-highlightable="true"
+						id="ikh3ep"
+						data-gjs-type="label"
+						draggable="true"
+						for="radio3"
+						class="manual-btn"
+						>Label</label
+					>
+					<label
+						data-gjs-highlightable="true"
+						id="iairx6"
+						data-gjs-type="label"
+						draggable="true"
+						for="radio4"
+						class="manual-btn"
+						>Label</label
+					>
+					<label
+						data-gjs-highlightable="true"
+						id="id2tbg"
+						data-gjs-type="label"
+						draggable="true"
+						for="radio5"
+						class="manual-btn"
+						>Label</label
+					>
+				</div>
+				<!-- Fim Label Navegação -->
+			</div>
+		</div>
+
+		<script>
+			//Mudar slide fatos automático
+			let count = 1;
+			document.getElementById('radio1').checked = true;
+			setInterval(function () {
+				nextFacts();
+			}, 5000);
+
+			function nextFacts() {
+				count++;
+				if (count > 5) {
+					count = 1;
+				}
+				document.getElementById('radio' + count).checked = true;
+			}
+			//Fim do código de mudar slide automático
+			//Mudar slide com setas
+			let btnNextSlide = document.getElementById('btnNextSlide');
+			let btnBackSlide = document.getElementById('btnBackSlide');
+
+			//Próximo slide
+			btnNextSlide.addEventListener('click', function () {
+				count++;
+				if (count > 5) {
+					count = 1;
+				}
+				document.getElementById('radio' + count).checked = true;
+			});
+			//Slide anterior
+			btnBackSlide.addEventListener('click', function () {
+				count--;
+				if (count < 1) {
+					count = 5;
+				}
+				document.getElementById('radio' + count).checked = true;
+			});
+
+			//Fim do script mudar slide fatos automático
+		</script>
+	</body>
+</html>
